@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "kona-logger"
 
   #s.files         = `git ls-files`.split("\n")
-  s.files         = `find .`.split("\n")
+  s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
   s.add_dependency('colorize')
 end
