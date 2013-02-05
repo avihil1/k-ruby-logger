@@ -9,3 +9,6 @@ params:
 
 logger can be disabled thru accessor called 'disabled'
 
+Example
+----------
+logger = KonaLogger::Logger.new(STDOUT, 'debug')
