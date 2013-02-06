@@ -11,5 +11,5 @@ logger can be disabled thru accessor called 'disabled'
 
 Example
 ----------
-logger = KonaLogger::Logger.new(STDOUT, 'debug')
-logger.debug(msg)
+`logger = KonaLogger::Logger.new(STDOUT, 'debug')`
+`logger.debug(msg)`
