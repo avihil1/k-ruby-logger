@@ -21,7 +21,7 @@ module KonaLogger
           msg.is_a?(String) ? msg : msg[:msg]
         end
 
-        "[#{dt.strftime("%Y-%m-%dT%T").magenta}][#{color_severity(s)}][#{get_callee(msg, caller)}] #{get_msg(msg)}"
+        "[#{dt.strftime("%Y-%m-%dT%T.%6N").magenta}][#{color_severity(s)}][#{get_callee(msg, caller)}] #{get_msg(msg)}"
       }
     end
 
