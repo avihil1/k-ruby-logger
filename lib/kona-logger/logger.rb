@@ -14,7 +14,7 @@ module KonaLogger
       self.logger.level =  severity.nil? ? @@severties['info'] : @@severties[severity]
       self.logger.formatter = proc { |s, dt, pr, msg|
         def get_callee(msg, caller)
-          msg.is_a?(String) ? "#{caller[0].gsub(/:in.*/,'').split('/')[-1]}" : msg[:callee]
+          msg.is_a?(String)	? get_caller_file(caller) : msg[:callee]
         end
 
         def get_msg(msg)
@@ -38,8 +38,12 @@ module KonaLogger
       exit 1
     end
 
+    def get_caller_file(caller)
+      (caller[0] =~ /logger\.rb/ ? caller[1] : caller[0]).to_s.gsub(/:in.*/,'').split('/')[-1]  
+    end
+    
     def method_missing(m,*args,&block)
-      msg = {:msg => "#{args.first.to_s}\n", :callee => caller[0].gsub(/:in.*/,'').split('/')[-1] }
+      msg = {:msg => "#{args.first.to_s}\n", :callee => get_caller_file(caller) }
       logger.send(m, msg) if logger.respond_to?(m) && !disabled
     end
 
