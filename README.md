@@ -3,7 +3,8 @@ kona-ruby-logger gem
 Description
 ------------
 This gem implements a simple logger.
-[params]:
+
+h4. params:
    * logfile - log file or STDOUT. default: STDOUT
    * loglevel - debug, info, error, fatal, warn. default: info
 
