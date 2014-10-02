@@ -1,4 +1,4 @@
-kona-logger gem
+kona-ruby-logger gem
 
 Description
 ------------
