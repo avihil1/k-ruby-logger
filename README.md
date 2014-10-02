@@ -4,7 +4,7 @@ Description
 ------------
 This gem implements a simple logger.
 
-h4. params:
+params:
    * logfile - log file or STDOUT. default: STDOUT
    * loglevel - debug, info, error, fatal, warn. default: info
 
